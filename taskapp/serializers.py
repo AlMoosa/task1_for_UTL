@@ -1,9 +1,12 @@
+from django.contrib.auth import get_user_model
 from rest_framework import serializers
 from .models import Taskapp, Tagapp
 
-# class UserSerializers(serializers.ModelSerializer):
-#     class Meta:
-#         model = User
+class UserSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = get_user_model()
+        fields = ('id', 'username')
 
 
 class TaskappSerializer(serializers.ModelSerializer):
