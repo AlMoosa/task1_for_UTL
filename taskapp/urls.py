@@ -4,8 +4,8 @@ from .views import TaskappViewSet, TagappViewSet
 # from taskapp.views import TaskappViewSet, TagappViewSet
 
 router = routers.DefaultRouter()
-router.register(r'tasks', TaskappViewSet, basename='tasks')
-router.register(r'tags', TagappViewSet, basename='tags')
+router.register('tasks', TaskappViewSet, basename='tasks')
+router.register('tags', TagappViewSet, basename='tags')
 # router.register('user/', TaskappViewSet)
 urlpatterns = router.urls
 
