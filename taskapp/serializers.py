@@ -2,6 +2,7 @@ from django.contrib.auth import get_user_model
 from rest_framework import serializers
 from .models import Taskapp, Tagapp
 
+
 class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -12,10 +13,11 @@ class UserSerializer(serializers.ModelSerializer):
 class TaskappSerializer(serializers.ModelSerializer):
     class Meta:
         model = Taskapp
-        fields = ('id', 'title', 'description', 'created_at', 'finished_date')
+        fields = ('id', 'author', 'title', 'description', 'status',
+                  'created_at', 'finished_date', 'tags')  
 
 
 class TagappSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tagapp
-        fields = ('id', 'title', 'date')
+        fields = ('id', 'author', 'title', 'date')  # 'username'

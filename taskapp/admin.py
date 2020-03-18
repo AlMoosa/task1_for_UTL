@@ -6,7 +6,7 @@ from .models import Taskapp, Tagapp
 class TaskAppAdmin(admin.ModelAdmin):
     # pass
     # model = Taskapp
-    list_display = ['title', 'description', 'status', 'created_at', 'finished_date']
+    list_display = ['title', 'author', 'description', 'status', 'created_at', 'finished_date']
 
 
 class TagappAdmin(admin.ModelAdmin):

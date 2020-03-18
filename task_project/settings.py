@@ -25,7 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites', # new
+    'django.contrib.sites',  # new
 
     #   Others
     'rest_framework',
@@ -37,9 +37,9 @@ INSTALLED_APPS = [
     'rest_auth.registration',  # new
 
     'taskapp.apps.TaskappConfig',
+    'users.apps.UsersConfig',
 ]
 
-# REST_FRAMEWORK = {'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'}
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
@@ -49,6 +49,13 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',  # new
     ],
 }
+
+'''
+• AllowAny - any user, authenticated or not, has full access
+• IsAuthenticated - only authenticated, registered users have access
+• IsAdminUser - only admins/superusers have access
+• IsAuthenticatedOrReadOnly - unauthorized users can view any page, but only
+authenticated users have write, edit, or delete privileges'''
 
 
 MIDDLEWARE = [
@@ -152,5 +159,5 @@ STATICFILES_DIRS = (
 # DATABASES['default'].update(prod_db)
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # new
-SITE_ID = 1 # new
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # new
+SITE_ID = 1  # new
