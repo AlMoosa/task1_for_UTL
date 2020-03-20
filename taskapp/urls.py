@@ -1,12 +1,10 @@
 from django.urls import path, include
-# from .views import TaskappViewSet, TagappViewSet
+from .views import TaskappViewSet, TagappViewSet
 from rest_framework import routers
-from taskapp.views import TaskappViewSet, TagappViewSet, UserViewSet
 
 router = routers.DefaultRouter()
 router.register('tasks', TaskappViewSet, basename='tasks')
 router.register('tags', TagappViewSet, basename='tags')
-router.register('users', UserViewSet, basename='users')
 
 urlpatterns = router.urls
 

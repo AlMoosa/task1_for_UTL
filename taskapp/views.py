@@ -1,17 +1,17 @@
-from django.contrib.auth import get_user_model
+# from django.contrib.auth import get_user_model
 from rest_framework import viewsets
 
 from .models import Taskapp, Tagapp
 from .permissions import IsAuthorOrReadOnly
 # , IsAuthenticatedOrReadOnly  # IsAuthenticated
 from rest_framework.permissions import IsAdminUser
-from .serializers import TaskappSerializer, TagappSerializer, UserSerializer
+from .serializers import TaskappSerializer, TagappSerializer
 
 #   такая моделька пойдет), я так думаю
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = get_user_model().objects.all()
-    serializer_class = UserSerializer
-    permission_classes = (IsAdminUser,)
+# class UserViewSet(viewsets.ModelViewSet):
+#     queryset = get_user_model().objects.all()
+#     serializer_class = UserSerializer
+#     permission_classes = (IsAuthorOrReadOnly,)
 
 
 class TaskappViewSet(viewsets.ModelViewSet):
