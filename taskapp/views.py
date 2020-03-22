@@ -1,16 +1,25 @@
 # from django.contrib.auth import get_user_model
+# , IsAuthenticatedOrReadOnly  # IsAuthenticated
 from rest_framework import viewsets
+# from rest_framework.views import APIView
 
 from .models import Taskapp, Tagapp
 from .permissions import IsAuthorOrReadOnly
-# , IsAuthenticatedOrReadOnly  # IsAuthenticated
-from rest_framework.permissions import IsAdminUser
+# from rest_framework.permissions import IsAdminUser
 from .serializers import TaskappSerializer, TagappSerializer
 
-#   такая моделька пойдет), я так думаю
-# class UserViewSet(viewsets.ModelViewSet):
-#     queryset = get_user_model().objects.all()
-#     serializer_class = UserSerializer
+
+# class TaskappView(viewsets.ModelViewSet):
+#     serializer_class = TaskappSerializer
+#     lookup_field = 'id'
+#     queryset = Taskapp.objects.all()
+#     permission_classes = (IsAuthorOrReadOnly,)
+
+
+# class TagappView(viewsets.ModelViewSet):
+#     serializer_class = TagappSerializer
+#     lookup_field = 'id'
+#     queryset = Tagapp.objects.all()
 #     permission_classes = (IsAuthorOrReadOnly,)
 
 
@@ -26,6 +35,15 @@ class TagappViewSet(viewsets.ModelViewSet):
     lookup_field = 'id'
     queryset = Tagapp.objects.all()
     permission_classes = (IsAuthorOrReadOnly,)
+
+
+
+#   такая моделька пойдет), я так думаю
+# class UserViewSet(viewsets.ModelViewSet):
+#     queryset = get_user_model().objects.all()
+#     serializer_class = UserSerializer
+#     permission_classes = (IsAuthorOrReadOnly,)
+
 
 
 #   IsAuthorOrReadOnly плюс в том что таски может

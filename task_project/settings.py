@@ -102,10 +102,14 @@ DATABASES = {
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'postgres',
-#         'USER': 'postgres',
-#         'HOST': 'db',
-#         'PORT': 5432,
+#         'NAME': 'tzmanager',
+#         'USER': 'admin',
+#         'PASSWORD': 'asdasd222',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432',
+#         # 'TEST': {
+#         #     'ENGINE': 'django.db.backends.postgresql',
+#         }
 #     }
 # }
 
